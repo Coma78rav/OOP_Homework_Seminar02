@@ -7,13 +7,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Human andrey = new Human("Иван Степанович");
-        Human juliya = new Human("Валюха");
-        Human anya = new Human("Ольга Николаевна");
-        Human kirill = new Human("Юрий Анатольевич");
-        Human stas = new Human("Митяй");
-        Human pavel = new Human("Женя");
-        Human sergey = new Human("Беркович");
+        Human andrey = new Human("Андрей");
+        Human juliya = new Human("Юля");
+        Human anya = new Human("Аня");
+        Human kirill = new Human("Кирилл");
+        Human stas = new Human("Стас");
+        Human pavel = new Human("Павел");
+        Human sergey = new Human("Сергей");
 
         Market semerochka = new Market();
 
