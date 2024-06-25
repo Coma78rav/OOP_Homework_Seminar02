@@ -1,15 +1,42 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import Human.Human;
+import Market.Market;
+import Product.EProduct;
+
+import java.util.List;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Human andrey = new Human("Иван Степанович");
+        Human juliya = new Human("Валюха");
+        Human anya = new Human("Ольга Николаевна");
+        Human kirill = new Human("Юрий Анатольевич");
+        Human stas = new Human("Митяй");
+        Human pavel = new Human("Женя");
+        Human sergey = new Human("Беркович");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Market semerochka = new Market();
+
+        semerochka.acceptToMarket(List.of(andrey, juliya, anya, kirill, pavel, stas));
+
+        semerochka.giveOrders(andrey, List.of(EProduct.SUGAR, EProduct.JUICE, EProduct.VODKA));
+        semerochka.giveOrders(juliya, List.of(EProduct.APPLE, EProduct.FILE, EProduct.POTATO, EProduct.MEAT));
+        semerochka.giveOrder(anya, EProduct.APPLE);
+        semerochka.giveOrder(kirill, EProduct.APPLE);
+
+        semerochka.update();
+
+        semerochka.releaseFromMarket(juliya);
+        semerochka.releaseFromMarket(anya);
+
+        semerochka.acceptToMarket(sergey);
+        semerochka.giveOrder(sergey, EProduct.VODKA);
+
+        semerochka.update();
+
+        semerochka.releaseFromMarket();
+
+        semerochka.update();
+
     }
 }
